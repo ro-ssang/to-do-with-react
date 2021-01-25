@@ -1,0 +1,9 @@
+.PageHeader {
+  background: #ccc;
+  text-align: center;
+}
+
+.PageHeader h1 {
+  padding: 24px 0;
+  color: #fff;
+}
