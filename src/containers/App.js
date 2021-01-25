@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import classes from "./App.module.css";
 import PageHeader from "../components/PageHeader/PageHeader";
 import ColorPallete from "../components/ColorPallete/ColorPallete";
+import ToDo from "../components/ToDo/ToDo";
 
 class App extends Component {
   render() {
@@ -10,7 +11,7 @@ class App extends Component {
       <div className={classes.App}>
         <PageHeader />
         <ColorPallete />
-        <div>toDo</div>
+        <ToDo />
       </div>
     );
   }
