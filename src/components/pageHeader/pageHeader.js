@@ -1,6 +1,6 @@
 import React from "react";
 
-import classes from "./pageHeader.module.css";
+import classes from "./PageHeader.module.css";
 
 const pageHeader = (props) => (
   <header className={classes.PageHeader}>

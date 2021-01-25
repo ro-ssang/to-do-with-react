@@ -1,0 +1,7 @@
+.ColorItem {
+  margin: 0 20px;
+  width: 40px;
+  height: 40px;
+  background: #ddd;
+  cursor: pointer;
+}
