@@ -6,12 +6,20 @@ import ColorPallete from "../components/ColorPallete/ColorPallete";
 import ToDo from "../components/ToDo/ToDo";
 
 class App extends Component {
+  state = {
+    toDos: [
+      { text: "React Introduction" },
+      { text: "Using JSX" },
+      { text: "Understanding Lifecycle" },
+    ],
+  };
+
   render() {
     return (
       <div className={classes.App}>
         <PageHeader />
         <ColorPallete />
-        <ToDo />
+        <ToDo toDos={this.state.toDos} />
       </div>
     );
   }

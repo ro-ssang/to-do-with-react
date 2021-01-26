@@ -7,7 +7,7 @@ const toDoItem = (props) => (
     <button className={classes.CloseBtn}>
       <i className="fas fa-times"></i>
     </button>
-    <span className={classes.ToDoText}>React Introduction</span>
+    <span className={classes.ToDoText}>{props.text}</span>
     <button className={classes.CheckBtn}>
       <i className="fas fa-check"></i>
     </button>

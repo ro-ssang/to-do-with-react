@@ -7,7 +7,7 @@ import ToDoList from "./ToDoList/ToDoList";
 const toDo = (props) => (
   <Aux>
     <ToDoForm />
-    <ToDoList />
+    <ToDoList toDos={props.toDos} />
   </Aux>
 );
 
