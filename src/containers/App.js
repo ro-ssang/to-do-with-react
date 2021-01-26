@@ -12,6 +12,8 @@ class App extends Component {
       { id: "toDo2", text: "Using JSX", checked: true },
       { id: "toDo3", text: "Understanding Lifecycle", checked: false },
     ],
+    colorCodes: ["black", "red", "green", "blue"],
+    currentColor: null,
   };
 
   deleteToDoHandler = (event, id) => {
@@ -29,12 +31,13 @@ class App extends Component {
     this.setState({ toDos: toDos });
   };
 
-  submitToDoHandler = (event, inputEl) => {
+  submitToDoHandler = (event, inputEl, color) => {
     event.preventDefault();
     const newToDo = {
       id: Math.random(),
       text: inputEl.value,
       checked: false,
+      color: color,
     };
     const toDos = [...this.state.toDos];
     toDos.push(newToDo);
@@ -42,16 +45,24 @@ class App extends Component {
     inputEl.value = "";
   };
 
+  colorClickedHandler = (colorCode) => {
+    this.setState({ currentColor: colorCode });
+  };
+
   render() {
     return (
       <div className={classes.App}>
         <PageHeader />
-        <ColorPallete />
+        <ColorPallete
+          colorCodes={this.state.colorCodes}
+          clicked={this.colorClickedHandler}
+        />
         <ToDo
           toDos={this.state.toDos}
           removed={this.deleteToDoHandler}
           toggle={this.toggleToDoHandler}
           submitted={this.submitToDoHandler}
+          fontColor={this.state.currentColor}
         />
       </div>
     );

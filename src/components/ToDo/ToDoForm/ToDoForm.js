@@ -12,7 +12,9 @@ class ToDoForm extends Component {
     return (
       <form
         className={classes.ToDoForm}
-        onSubmit={(event) => this.props.submitted(event, this.inputRef.current)}
+        onSubmit={(event) =>
+          this.props.submitted(event, this.inputRef.current, this.props.color)
+        }
       >
         <input
           type="text"

@@ -15,7 +15,12 @@ const toDoItem = (props) => {
       <button className={classes.CloseBtn} onClick={props.removed}>
         <i className="fas fa-times"></i>
       </button>
-      <span className={toDoTextClasses.join(" ")}>{props.text}</span>
+      <span
+        style={{ color: props.fontColor }}
+        className={toDoTextClasses.join(" ")}
+      >
+        {props.text}
+      </span>
       <span className={toDoCheckIconClasses.join(" ")}>
         <i className="fas fa-check"></i>
       </span>

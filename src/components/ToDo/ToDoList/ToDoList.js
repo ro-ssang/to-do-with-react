@@ -12,6 +12,7 @@ const toDoList = (props) => {
         checked={toDo.checked}
         removed={(event) => props.removed(event, toDo.id)}
         toggle={() => props.toggle(toDo.id)}
+        fontColor={toDo.color}
       />
     );
   });

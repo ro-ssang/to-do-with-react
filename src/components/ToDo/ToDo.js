@@ -6,7 +6,7 @@ import ToDoList from "./ToDoList/ToDoList";
 
 const toDo = (props) => (
   <Aux>
-    <ToDoForm submitted={props.submitted} />
+    <ToDoForm submitted={props.submitted} color={props.fontColor} />
     <ToDoList
       toDos={props.toDos}
       removed={props.removed}
