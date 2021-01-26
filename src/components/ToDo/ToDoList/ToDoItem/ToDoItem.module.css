@@ -1,0 +1,34 @@
+.ToDoItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 20px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.ToDoItem:last-child {
+  border-bottom: none;
+}
+
+.CloseBtn {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  background: transparent;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.ToDoText {
+  padding-left: 40px;
+}
+
+.CheckBtn {
+  background: transparent;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+}
