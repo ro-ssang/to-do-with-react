@@ -5,6 +5,7 @@
   position: relative;
   padding: 20px 20px;
   border-bottom: 1px solid #eee;
+  cursor: pointer;
 }
 
 .ToDoItem:last-child {
@@ -26,9 +27,18 @@
   padding-left: 40px;
 }
 
-.CheckBtn {
+.ToDoText.Checked {
+  color: #ccc;
+  text-decoration: line-through;
+}
+
+.CheckIcon {
+  display: none;
   background: transparent;
   border: none;
   color: #ccc;
-  cursor: pointer;
+}
+
+.CheckIcon.Checked {
+  display: block;
 }

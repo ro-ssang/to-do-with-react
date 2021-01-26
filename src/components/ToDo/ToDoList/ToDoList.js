@@ -9,7 +9,9 @@ const toDoList = (props) => {
       <ToDoItem
         key={toDo.id}
         text={toDo.text}
-        removed={() => props.removed(toDo.id)}
+        checked={toDo.checked}
+        removed={(event) => props.removed(event, toDo.id)}
+        toggle={() => props.toggle(toDo.id)}
       />
     );
   });

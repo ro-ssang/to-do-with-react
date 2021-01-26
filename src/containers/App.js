@@ -8,16 +8,25 @@ import ToDo from "../components/ToDo/ToDo";
 class App extends Component {
   state = {
     toDos: [
-      { id: "toDo1", text: "React Introduction" },
-      { id: "toDo2", text: "Using JSX" },
-      { id: "toDo3", text: "Understanding Lifecycle" },
+      { id: "toDo1", text: "React Introduction", checked: false },
+      { id: "toDo2", text: "Using JSX", checked: true },
+      { id: "toDo3", text: "Understanding Lifecycle", checked: false },
     ],
   };
 
-  deleteToDoHandler = (id) => {
-    const toDos = this.state.toDos;
+  deleteToDoHandler = (event, id) => {
+    event.stopPropagation();
+    const toDos = [...this.state.toDos];
     const updatedToDos = toDos.filter((toDo) => toDo.id !== id);
     this.setState({ toDos: updatedToDos });
+  };
+
+  toggleToDoHandler = (id) => {
+    console.log("Toggled");
+    const toDos = [...this.state.toDos];
+    const toDo = toDos.find((toDo) => toDo.id === id);
+    toDo.checked = !toDo.checked;
+    this.setState({ toDos: toDos });
   };
 
   render() {
@@ -25,7 +34,11 @@ class App extends Component {
       <div className={classes.App}>
         <PageHeader />
         <ColorPallete />
-        <ToDo toDos={this.state.toDos} removed={this.deleteToDoHandler} />
+        <ToDo
+          toDos={this.state.toDos}
+          removed={this.deleteToDoHandler}
+          toggle={this.toggleToDoHandler}
+        />
       </div>
     );
   }
