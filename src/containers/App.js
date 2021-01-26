@@ -8,10 +8,16 @@ import ToDo from "../components/ToDo/ToDo";
 class App extends Component {
   state = {
     toDos: [
-      { text: "React Introduction" },
-      { text: "Using JSX" },
-      { text: "Understanding Lifecycle" },
+      { id: "toDo1", text: "React Introduction" },
+      { id: "toDo2", text: "Using JSX" },
+      { id: "toDo3", text: "Understanding Lifecycle" },
     ],
+  };
+
+  deleteToDoHandler = (id) => {
+    const toDos = this.state.toDos;
+    const updatedToDos = toDos.filter((toDo) => toDo.id !== id);
+    this.setState({ toDos: updatedToDos });
   };
 
   render() {
@@ -19,7 +25,7 @@ class App extends Component {
       <div className={classes.App}>
         <PageHeader />
         <ColorPallete />
-        <ToDo toDos={this.state.toDos} />
+        <ToDo toDos={this.state.toDos} removed={this.deleteToDoHandler} />
       </div>
     );
   }
