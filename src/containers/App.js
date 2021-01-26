@@ -29,6 +29,19 @@ class App extends Component {
     this.setState({ toDos: toDos });
   };
 
+  submitToDoHandler = (event, inputEl) => {
+    event.preventDefault();
+    const newToDo = {
+      id: Math.random(),
+      text: inputEl.value,
+      checked: false,
+    };
+    const toDos = [...this.state.toDos];
+    toDos.push(newToDo);
+    this.setState({ toDos: toDos });
+    inputEl.value = "";
+  };
+
   render() {
     return (
       <div className={classes.App}>
@@ -38,6 +51,7 @@ class App extends Component {
           toDos={this.state.toDos}
           removed={this.deleteToDoHandler}
           toggle={this.toggleToDoHandler}
+          submitted={this.submitToDoHandler}
         />
       </div>
     );
